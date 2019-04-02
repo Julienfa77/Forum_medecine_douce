@@ -14,7 +14,6 @@ class CategorieType extends AbstractType
     {
         $builder
             ->add('name',TextType::class)
-
         ;
     }
 
