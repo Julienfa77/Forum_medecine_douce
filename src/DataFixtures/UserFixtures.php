@@ -10,6 +10,12 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class UserFixtures extends Fixture
 {
 
+    const USER_USER1 = 'user1';
+    const USER_USER2 = 'user2';
+    const USER_USER3 = 'user3';
+    const USER_USER4 = 'user4';
+    const USER_USER5 = 'user5';
+
     private $passwordEncoder;
 
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
@@ -23,35 +29,35 @@ class UserFixtures extends Fixture
         // $manager->persist($product);
         //
         $user1 = new User();
-        $user->setName()
+        $user1->setName('Paul')
           ->setRoles(['ROLE_ADMIN'])
-          ->setEmail('mama92@outlook.fr')
+          ->setEmail('mama90@outlook.fr')
           ->setPassword($this->passwordEncoder->encodePassword($user1,'password'));
 
           $manager->persist($user1);
 
           $user2 = new User();
-          $user->setName()
+          $user2->setName('Robert')
             ->setRoles(['ROLE_USER'])
-            ->setEmail('mama@outlook.fr')
-            ->setPassword($this->passwordEncoder->encodePassword($user,'password'));
+            ->setEmail('mama91@outlook.fr')
+            ->setPassword($this->passwordEncoder->encodePassword($user2,'password'));
 
             $manager->persist($user2);
 
             //
             $user3 = new User();
-            $user->setName()
-              ->setRoles(['ROLE_ADMIN'])
-              ->setEmail('mama922@outlook.fr')
+            $user3->setName('Anne')
+              ->setRoles(['ROLE_USER'])
+              ->setEmail('mama93@outlook.fr')
               ->setPassword($this->passwordEncoder->encodePassword($user3,'password'));
 
               $manager->persist($user3);
 
               //
               $user4 = new User();
-              $user->setName()
-                ->setRoles(['ROLE_ADMIN'])
-                ->setEmail('mama92@outlook.fr')
+              $user4->setName('Jule')
+                ->setRoles(['ROLE_USER'])
+                ->setEmail('mama94@outlook.fr')
                 ->setPassword($this->passwordEncoder->encodePassword($user4,'password'));
 
                 $manager->persist($user4);
@@ -59,13 +65,20 @@ class UserFixtures extends Fixture
 
                 //
                 $user5 = new User();
-                $user->setName()
-                  ->setRoles(['ROLE_ADMIN'])
-                  ->setEmail('mama92@outlook.fr')
+                $user5->setName('Louis')
+                  ->setRoles(['ROLE_USER'])
+                  ->setEmail('mama95@outlook.fr')
                   ->setPassword($this->passwordEncoder->encodePassword($user5,'password'));
 
                   $manager->persist($user5);
 
         $manager->flush();
+
+        $this->addReference(self::USER_USER1, $user1);
+        $this->addReference(self::USER_USER2, $user2);
+        $this->addReference(self::USER_USER3, $user3);
+        $this->addReference(self::USER_USER4, $user4);
+        $this->addReference(self::USER_USER5, $user5);
+
     }
 }

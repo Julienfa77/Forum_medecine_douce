@@ -5,8 +5,9 @@ namespace App\DataFixtures;
 use App\Entity\Topic;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class TopicFixtures extends Fixture
+class TopicFixtures extends Fixture implements DependentFixtureInterface
 {
     const TOPIC_TOPIC1 = 'topic1';
     const TOPIC_TOPIC2 = 'topic2';
@@ -52,7 +53,15 @@ class TopicFixtures extends Fixture
         $this->addReference(self::TOPIC_TOPIC4, $topic4);
         $this->addReference(self::TOPIC_TOPIC5, $topic5);
 
+    }
 
-
+    /**
+     *  @return array
+     */
+    public function getDependencies()
+    {
+      return [
+        CategorieFixtures::class,
+      ];
     }
 }
