@@ -14,6 +14,10 @@ Edit Topic: Modifier le topic
 New topic: Nouveau topic
 titre: Titre
 actions: Actions
+
+categorie:
+  name: Nom
+
 Edit categorie: Modifier la categorie
 Create new categorie: Créer une nouvelle categorie
 Categorie: Categorie
