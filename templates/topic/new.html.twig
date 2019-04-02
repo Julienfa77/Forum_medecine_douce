@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Topic{% endblock %}
+{% block title %}{{ 'New topic' | trans }}{% endblock %}
 
 {% block body %}
-    <h1>Create new Topic</h1>
+    <h1>{{ 'New topic' | trans }}</h1>
 
     {{ include('topic/_form.html.twig') }}
 
