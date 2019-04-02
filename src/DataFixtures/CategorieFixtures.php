@@ -7,6 +7,12 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 class CategorieFixtures extends Fixture
 {
+    const CATEGORIE_VACCINS = 'vaccins';
+    const CATEGORIE_MEDICAMENTS = 'medicaments';
+    const CATEGORIE_PHARMACIE = 'pharmacie';
+    const CATEGORIE_ORDONNANCE = 'ordonnance';
+    const CATEGORIE_PIQURE = 'piqure';
+
     public function load(ObjectManager $manager)
     {
         // $product = new Product();
@@ -32,11 +38,12 @@ class CategorieFixtures extends Fixture
           $categorie5->setName('Piqure');
             $manager->persist($categorie5);
 
-
-
-
-
-
         $manager->flush();
+
+        $this->addReference(self::CATEGORIE_VACCINS, $categorie1);
+        $this->addReference(self::CATEGORIE_MEDICAMENTS, $categorie2);
+        $this->addReference(self::CATEGORIE_PHARMACIE, $categorie3);
+        $this->addReference(self::CATEGORIE_ORDONNANCE, $categorie4);
+        $this->addReference(self::CATEGORIE_PIQURE, $categorie5);
     }
 }

@@ -7,7 +7,10 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 class MessageFixtures extends Fixture
 {
-    public function load(ObjectManager $emanager)
+
+
+
+    public function load(ObjectManager $manager)
     {
         // $product = new Product();
         // $manager->persist($product);
