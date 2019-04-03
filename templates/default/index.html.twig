@@ -9,4 +9,11 @@
     <li><a href="{{ path('register_index') }}">S'enregistrer</a></li><hr>
 </ul>
 
+    <ul>
+    {% for categorie in categories %}
+
+        <li><a href="{{ path('forum_show', {'id': categorie.id}) }}">{{ categorie.name }}</a></li>
+
+    {% endfor %}
+    </ul>
 {% endblock %}

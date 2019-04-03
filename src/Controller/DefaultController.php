@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Repository\CategorieRepository;
 use Symfony\Component\Form\Extension\Core\Type\UserType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -20,13 +21,26 @@ class DefaultController extends AbstractController
     /**
      * @Route("/home", name="home")
      */
-    public function index()
+    public function index(CategorieRepository $repository)
     {
-        return $this->render('default/index.html.twig');
+        $categories=$repository->findAll();
+
+        return $this->render('default/index.html.twig',[
+            'categories'=>$categories
+        ]);
     }
 
     /**
-     * @Route("/", name="register_index", methods={"GET"})
+     * @Route("forum/{id}", name="forum_show")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function forum()
+    {
+        return $this->render('default/forum.html.twig');
+    }
+
+    /**
+     * @Route("/register", name="register_index", methods={"GET", "POST"})
      */
     public function register(
       Request $request,
