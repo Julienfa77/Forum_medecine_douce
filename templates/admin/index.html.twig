@@ -4,5 +4,14 @@
 
 {% block body %}
     <h1>Administration du site</h1>
-<a href="{{ path('topic_index') }}">gestion des topics</a>
+<ul>
+
+   <li> <a href="{{ path('topic_index') }}">Gestion des topics</a></li><hr>
+    <li><a href="{{ path('categorie_index') }}">Gestion des catégories</a></li><hr>
+    <li><a href="{{ path('topic_index') }}">Gestion des topics</a></li><hr>
+    <li><a href="{{ path('user_index') }}">Gestion des users</a></li><hr>
+    <li><a href="{{ path('message_index') }}">Gestion des messages</a></li>
+
+</ul>
+
 {% endblock %}
