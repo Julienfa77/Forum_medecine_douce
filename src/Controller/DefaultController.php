@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Repository\CategorieRepository;
+use App\Repository\TopicRepository;
 use Symfony\Component\Form\Extension\Core\Type\UserType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -34,9 +35,12 @@ class DefaultController extends AbstractController
      * @Route("forum/{id}", name="forum_show")
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function forum()
+    public function forum(TopicRepository $repository,$id)
     {
-        return $this->render('default/forum.html.twig');
+        $topics=$repository->findTopicWithCategorieId($id);
+        return $this->render('default/forum.html.twig',[
+            'topics'=>$topics
+        ]);
     }
 
     /**

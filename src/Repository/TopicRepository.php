@@ -19,6 +19,15 @@ class TopicRepository extends ServiceEntityRepository
         parent::__construct($registry, Topic::class);
     }
 
+    public function findTopicWithCategorieId($id)
+    {
+        return ($qb=$this->createQueryBuilder('t'))
+            ->where($qb->expr()->eq('t.categorie', ':id'))
+            ->setParameter(':id', $id)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Topic[] Returns an array of Topic objects
     //  */
