@@ -5,9 +5,16 @@
 {% block body %}
 <h1>Accueil du forum</h1>
 
-<ul>
-    <li><a href="{{ path('register_index') }}">S'enregistrer</a></li><hr>
-</ul>
+
+    <a href="{{ path('register_index') }}">S'enregistrer</a><br>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <a href="{{ path('logout_route') }}">Se Deconnecter</a><br>
+    {% else %}
+    <a href="{{ path('app_login') }}">Se connecter</a><br>
+    {% endif %}
+    <hr>
+
+
 
     <ul>
     {% for categorie in categories %}
