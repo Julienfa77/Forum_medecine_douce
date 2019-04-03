@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}S'enregister sur le forum{% endblock %}
+
+{% block body %}
+<h1>S'enregister sur le forum</h1>
+
+<div>
+  {{ form_start(register_form) }}
+  {{ form_widget(register_form) }}
+  <input type="submit" name="register" value="Enregistrer">
+  {{ form_end(register_form) }}
+</div>
+
+{% endblock %}
