@@ -14,6 +14,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
+
 class DefaultController extends AbstractController
 {
     /**
@@ -25,7 +26,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/register", name="register")
+     * @Route("/", name="register_index", methods={"GET"})
      */
     public function register(
       Request $request,
