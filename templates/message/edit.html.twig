@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'Edit categorie' | trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'Edit categorie' | trans }}</h1>
+
+    {{ include('message/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('message_index') }}">{{ 'back to list' | trans }}</a>
+
+    {{ include('message/_delete_form.html.twig') }}
+{% endblock %}

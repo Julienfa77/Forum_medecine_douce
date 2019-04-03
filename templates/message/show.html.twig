@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'Message' | trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'Message' | trans }}</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ message.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ message.titre }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ message.contenu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('message_index') }}">{{ 'back to list' | trans }}</a>
+
+    <a href="{{ path('message_edit', {'id': message.id}) }}">{{ 'edit' | trans }}</a>
+
+    {{ include('message/_delete_form.html.twig') }}
+{% endblock %}
