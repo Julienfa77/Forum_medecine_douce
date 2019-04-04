@@ -7,7 +7,10 @@ h1 {
     margin: .8077em 0 0 0;
 }
 .medecine {
-    background: rgb(153, 255, 204);
+    background: url(https://image.noelshack.com/fichiers/2019/14/4/1554363928-fond-projet.png) no-repeat center center fixed;
+    background-size: 550px;
+
+
 }
 
 ul{
