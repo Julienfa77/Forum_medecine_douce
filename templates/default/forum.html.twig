@@ -2,9 +2,13 @@
 
 
 {% block body %}
-{% for topic in topics %}
-    {{ topic.titre }}
-{% endfor %}
+    <ul>
+        {% for topic in topics %}
+            <li><a href="{{ path('forum_topic_show', {'id': topic.id}) }}">{{ topic.titre }}</a></li>
+
+        {% endfor %}
+    </ul>
+
     <br/>
     {% if is_granted('IS_AUTHENTICATED_FULLY')%}
     <a href="{{ path('forum_create_topic', {'id': categorie_id}) }}">Créer un topic</a>
