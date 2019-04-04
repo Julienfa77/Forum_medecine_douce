@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Categorie;
+use App\Entity\Topic;
 use App\Entity\User;
+use App\Form\TopicType;
 use App\Repository\CategorieRepository;
 use App\Repository\TopicRepository;
 use Symfony\Component\Form\Extension\Core\Type\UserType;
@@ -39,8 +42,52 @@ class DefaultController extends AbstractController
     {
         $topics=$repository->findTopicWithCategorieId($id);
         return $this->render('default/forum.html.twig',[
-            'topics'=>$topics
+            'topics'=>$topics,
+            'categorie_id'=>$id
         ]);
+    }
+
+    /**
+     * @Route("/forum/{id}/create_topic",name="forum_create_topic")
+     * @param Request $request
+     * @param $id
+     */
+    public function forumCreateTopic(
+        Request $request,
+        $id,
+        CategorieRepository $repository,
+        EntityManagerInterface $manager
+        ) {
+        $categorie=$repository->find($id);
+        $topic=new Topic();
+
+        $topic->setCategorie($categorie);
+        $form=$this->createForm(TopicType::class,$topic);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()&& $form->isValid()){
+            $manager->persist($topic);
+            $manager->flush();
+
+            return $this->redirectToRoute('forum_topic_show', [
+                'id'=>$topic->getId()
+            ]);
+        }
+        return $this->render('default/create_topic.html.twig',[
+            'form_topic'=>$form->createView()
+        ]);
+    }
+
+    /**
+     * @Route ("/forum/{id}/show_topic", name="forum_topic_show")
+     * @param Topic $topic
+     */
+    public function topic(Topic $topic)
+    {
+         return $this->render('default/show_topic.html.twig', [
+             'topic'=>$topic
+         ]);
     }
 
     /**

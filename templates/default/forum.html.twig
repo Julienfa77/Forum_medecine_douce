@@ -5,6 +5,10 @@
 {% for topic in topics %}
     {{ topic.titre }}
 {% endfor %}
+    <br/>
+    {% if is_granted('IS_AUTHENTICATED_FULLY')%}
+    <a href="{{ path('forum_create_topic', {'id': categorie_id}) }}">Créer un topic</a>
+    {% endif %}
     <a href="{{ path('home') }}">Retour à l'acceuil</a>
 {% endblock %}
 
