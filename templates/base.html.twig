@@ -5,7 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/style.css')}}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+        <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
       {% endblock %}
     </head>
 
@@ -15,16 +15,17 @@
       <div class="header">
 
       <h1>Medecine douce</h1>
+      <h2>Fil D'actualité des articles</h2>
 
         <div class="image-header">
           <div class="image-header-article1">
-              <img src="{{ asset('../images/beer.png')}}">
+              <img src="{{ asset('../images/ayurveda.jpg')}}">
           </div>
-          <div class="image-header-article2" height="42" width="42">
+          <div class="image-header-article2" >
               <img src="{{ asset('../images/the.png')}}">
           </div>
-          <div class="image-header-article3" height="42" width="42">
-              <img src="{{ asset('../images/girl.png')}}">
+          <div class="image-header-article3">
+              <img src="{{ asset('../images/thym.jpg')}}">
         </div>
 
       {% block header %}{% endblock %}
