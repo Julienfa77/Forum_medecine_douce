@@ -1,19 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Medecine douce{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
-<h1>Medecine douce</h1>
 
-  <div class="se-connecter">
-    <a href="{{ path('register_index') }}">S'enregistrer</a><br>
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-    <a href="{{ path('logout_route') }}">Se Deconnecter</a><br>
-    {% else %}
-    <a href="{{ path('app_login') }}">Se connecter</a><br>
-    {% endif %}
-    <hr>
-  </div>
+
 
 
     <ul>
