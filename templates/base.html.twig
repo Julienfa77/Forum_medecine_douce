@@ -10,9 +10,17 @@
     </head>
 
 
-    <body class="medecine">
+    <body>
+      <div class="header">
+      {% block header %}{% endblock %}
+   </div>
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+
+
+
+
     </body>
 
 
