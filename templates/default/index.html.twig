@@ -1,9 +1,63 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}{% endblock %}
+{% block header %}
+
+</div>
+  <div class="image-header">
+    <div class="image-header-article1">
+        <img src="{{ asset('../images/herb.jpg')}}">
+        <h3 id="h3-image1">La réussite de l'ayurveda</h3>
+    </div>
+    <div class="image-header-article2" >
+        <img src="{{ asset('../images/yoga.jpg')}}">
+        <h3 id="h3-image2">Le yoga libérateur </h3>
+    </div>
+    <div class="image-header-article3">
+        <img src="{{ asset('../images/thym.jpg')}}">
+        <h3 id="h3-image3">Le thym à travers les siècles de médecine</h3>
+  </div>
+  <div class="image-header-article4">
+      <img src="{{ asset('../images/eau.jpg')}}">
+      <h3 id="h3-image1">L'eau dans la naturophatie</h3>
+  </div>{% endblock %}
+
+
 
 {% block body %}
 
+<div class="body-page">
+  <title>Fil des Topics</title>
+  <img class="imgpp1"src="{{ asset('../images/pp1.png')}}">
+  <div class="trending-topic">
+    <h5>Les six saveurs</h5>
+    <p>Marine Shein
+      <span>5 commentaires</span>
+    </p>
+  </div>
+ <img class="imgpp2" src="{{ asset('../images/pp2.png')}}">
+  <div class="trending-topic2">
+    <h5>Cuisiner sans sucre ! Quelles sont vos recettes ?</h5>
+    <p>Sophie Than
+      <span>25 commentaires</span>
+    </p>
+  </div>
+   <img class="imgpp3"src="{{ asset('../images/pp3.png')}}">
+  <div class="trending-topic3">
+    <h5>Baume du Tigre</h5>
+    <p>Amahada Vanh Sellier
+      <span>213 commentaires</span>
+    </p>
+  </div>
+  <img class="imgpp4"src="{{ asset('../images/pp4.png')}}">
+  <div class="trending-topic4">
+    <h5>Le soleil me fait des migraines !</h5>
+    <p>Sakura Chan
+      <span>1 commentaire</span>
+    </p>
+  </div>
+
+</div>
 
 
 

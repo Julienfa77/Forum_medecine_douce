@@ -7,39 +7,26 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
 
       {% endblock %}
+      <div class="header">
+
+      <h1><img src="{{ asset('images/logo1.png')}}"</h1>
+      <h2 id="h2-base">Fil d'actualité des articles</h2>
+
     </head>
 
 
     <body>
 
-      <div class="header">
-
-      <h1><img src="{{ asset('../images/logo1.png')}}"</h1>
-      <h2 id="h2-base">Fil d'actualité des articles</h2>
-
-        <div class="image-header">
-          <div class="image-header-article1">
-              <img src="{{ asset('../images/herb.jpg')}}">
-              <h3 id="h3-image1">La réussite de l'ayurveda</h3>
-          </div>
-          <div class="image-header-article2" >
-              <img src="{{ asset('../images/yoga.jpg')}}">
-              <h3 id="h3-image2">Le yoga libérateur </h3>
-          </div>
-          <div class="image-header-article3">
-              <img src="{{ asset('../images/thym.jpg')}}">
-              <h3 id="h3-image3">Le thym à travers les siècles de médecine</h3>
-        </div>
-        <div class="image-header-article4">
-            <img src="{{ asset('../images/eau.jpg')}}">
-            <h3 id="h3-image1">L'eau dans la naturophatie</h3>
-        </div>
+       
 
       {% block header %}{% endblock %}
     </div>
    </div>
+
 
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
