@@ -27,36 +27,86 @@
 {% block body %}
 
 <div class="body-page">
-  <title>Fil des Topics</title>
-  <img class="imgpp1"src="{{ asset('../images/pp1.png')}}">
-  <div class="trending-topic">
-    <h5>Les six saveurs</h5>
-    <p>Marine Shein
-      <span>5 commentaires</span>
-    </p>
-  </div>
- <img class="imgpp2" src="{{ asset('../images/pp2.png')}}">
-  <div class="trending-topic2">
-    <h5>Cuisiner sans sucre ! Quelles sont vos recettes ?</h5>
-    <p>Sophie Than
-      <span>25 commentaires</span>
-    </p>
-  </div>
-   <img class="imgpp3"src="{{ asset('../images/pp3.png')}}">
-  <div class="trending-topic3">
-    <h5>Baume du Tigre</h5>
-    <p>Amahada Vanh Sellier
-      <span>213 commentaires</span>
-    </p>
-  </div>
-  <img class="imgpp4"src="{{ asset('../images/pp4.png')}}">
-  <div class="trending-topic4">
-    <h5>Le soleil me fait des migraines !</h5>
-    <p>Sakura Chan
-      <span>1 commentaire</span>
-    </p>
-  </div>
+      <title>Fil des Topics</title>
+      <img class="imgpp1"src="{{ asset('../images/pp1.png')}}">
+      <div class="trending-topic">
+         <a href="" >
+        <h5>Les six saveurs</h5>
+        <p>Marine Shein
+          <span>5 commentaires</span>
+        </p>
+        </button>
+      </a>
+      </div>
 
+     <img class="imgpp2" src="{{ asset('../images/pp2.png')}}">
+      <div class="trending-topic2">
+           <a href="">
+        <h5>Cuisiner sans sucre ! Quelles sont vos recettes ?</h5>
+        <p>Sophie Than
+          <span>25 commentaires</span>
+        </p>
+      </a>
+      </div>
+
+       <img class="imgpp3"src="{{ asset('../images/pp3.png')}}">
+      <div class="trending-topic3">
+        <h5>Baume du Tigre</h5>
+        <p>Amahada Vanh Sellier
+          <span>213 commentaires</span>
+        </p>
+      </div>
+
+      <img class="imgpp4"src="{{ asset('../images/pp4.png')}}">
+      <div class="trending-topic4">
+        <h5>Le soleil me fait des migraines !</h5>
+        <p>Sakura Chan
+          <span>1 commentaire</span>
+        </p>
+      </div>
+</div>
+  <div class="fondcategorie"> <!--  background image -->
+ <div class="categorie"> <!-- grille -->
+
+
+
+
+  <a href="#" class="myButton1">
+    <h6>Plantes</h6>
+  </a>
+
+      <a href="#" class="myButton2">
+        <h6>Cuisine Du Monde </h6>
+          </a>
+
+          <a href="#" class="myButton3">
+           <h6>Les huiles</h6>
+            </a>
+
+            <a href="#" class="myButton4">
+              <h6>Herbes</h6>
+                </a>
+
+              <a href="#" class="myButton5">
+                <h6>CATEGORIE</h6>
+                  </a>
+
+                <a href="#" class="myButton6">
+                  <h6>Discipline</h6>
+                    </a>
+
+                    <a href="#" class="myButton7">
+                      <h6>Produit de la maison</h6>
+                        </a>
+
+                        <a href="#" class="myButton8">
+                          <h6>Bien-être</h6>
+                            </a>
+
+                            <a href="#" class="myButton9">
+                              <h6>Musique</h6>
+                                </a>
+</div>
 </div>
 
 
@@ -64,7 +114,7 @@
     <ul>
     {% for categorie in categories %}
 
-        <li><a href="{{ path('forum_show', {'id': categorie.id}) }}">{{ categorie.name }}</a></li>
+       <li><a href="{{ path('forum_show', {'id': categorie.id}) }}">{{ categorie.name }}</a></li> 
 
     {% endfor %}
     </ul>

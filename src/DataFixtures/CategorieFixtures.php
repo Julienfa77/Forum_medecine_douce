@@ -20,23 +20,23 @@ class CategorieFixtures extends Fixture
         // $manager->persist($product);
 
         $categorie1 = new Categorie();
-          $categorie1->setName('Vaccins');
+          $categorie1->setName('Plantes');
             $manager->persist($categorie1);
 
         $categorie2 = new Categorie();
-          $categorie2->setName('Medicaments');
+          $categorie2->setName('Les Huiles');
             $manager->persist($categorie2);
 
         $categorie3 = new Categorie();
-          $categorie3->setName('Pharmacie');
+          $categorie3->setName('Bien-être');
             $manager->persist($categorie3);
 
         $categorie4 = new Categorie();
-          $categorie4->setName('ordonnance');
+          $categorie4->setName('Herbes');
             $manager->persist($categorie4);
 
         $categorie5 = new Categorie();
-          $categorie5->setName('Piqure');
+          $categorie5->setName('Discipline');
             $manager->persist($categorie5);
 
         $manager->flush();
