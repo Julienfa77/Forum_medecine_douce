@@ -67,55 +67,23 @@
 </div>
   <div class="fondcategorie"> <!--  background image -->
  <div class="categorie"> <!-- grille -->
+{% set pos = 0 %}
+{% for categorie in categories %}
+{%  if loop.index == 5 %}
+{% set pos = 1 %}
+<h6 class="myButton5">CATEGORIES</h6>
+{% endif %}
 
-
-
-
-  <a href="#" class="myButton1">
-    <h6>Plantes</h6>
+  <a href="{{ path('forum_show', {'id': categorie.id}) }}" class="myButton{{ loop.index + pos }}">
+    <h6>{{ categorie.name }}</h6>
   </a>
+{% endfor %}
 
-      <a href="#" class="myButton2">
-        <h6>Cuisine Du Monde </h6>
-          </a>
 
-          <a href="#" class="myButton3">
-           <h6>Les huiles</h6>
-            </a>
-
-            <a href="#" class="myButton4">
-              <h6>Herbes</h6>
-                </a>
-
-              <a href="#" class="myButton5">
-                <h6>CATEGORIE</h6>
-                  </a>
-
-                <a href="#" class="myButton6">
-                  <h6>Discipline</h6>
-                    </a>
-
-                    <a href="#" class="myButton7">
-                      <h6>Produit de la maison</h6>
-                        </a>
-
-                        <a href="#" class="myButton8">
-                          <h6>Bien-être</h6>
-                            </a>
-
-                            <a href="#" class="myButton9">
-                              <h6>Musique</h6>
-                                </a>
 </div>
 </div>
 
 
 
-    <ul>
-    {% for categorie in categories %}
 
-       <li><a href="{{ path('forum_show', {'id': categorie.id}) }}">{{ categorie.name }}</a></li> 
-
-    {% endfor %}
-    </ul>
 {% endblock %}

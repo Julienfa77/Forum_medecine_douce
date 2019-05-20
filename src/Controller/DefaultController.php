@@ -79,6 +79,7 @@ class DefaultController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted()&& $form->isValid()){
+            $topic->setUser( $this->getUser());
             $manager->persist($topic);
             $manager->flush();
 
@@ -88,6 +89,7 @@ class DefaultController extends AbstractController
         }
         return $this->render('default/create_topic.html.twig',[
             'form_topic'=>$form->createView()
+
         ]);
     }
 

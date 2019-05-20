@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ 'Edit User' | trans }} {% endblock %}
+
+
+
+{% block body %}
+  {{ form_start(from_topic) }}
+  {{ form_widget(form_topic) }}
+  <input Type="submit" name="submit" value="titre_topic">
+  <input Type="submit" name="submit" value="contenu_topic">
+  {{ form_end(from_topic) }}
+
+{% endblock%}
