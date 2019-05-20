@@ -7,6 +7,7 @@ use App\Entity\Topic;
 use App\Entity\User;
 use App\Form\TopicType;
 use App\Repository\CategorieRepository;
+use App\Repository\ArticleRepository;
 use App\Repository\TopicRepository;
 use Symfony\Component\Form\Extension\Core\Type\UserType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -25,11 +26,21 @@ class DefaultController extends AbstractController
     /**
      * @Route("/home", name="home")
      */
-    public function index(CategorieRepository $repository)
+    public function index(ArticleRepository $articleRepository,
+                          CategorieRepository $categoryRepository,
+                          TopicRepository $topicRepository )
     {
-        $categories=$repository->findAll();
+       $articles=$articleRepository->findAll();
+
+        $categories=$categoryRepository->findAll();
+
+
+        $topics=$topicRepository->findAll();
+
 
         return $this->render('default/index.html.twig',[
+            'articles'=>$articles,
+            'topics'=>$topics,
             'categories'=>$categories
         ]);
     }
@@ -43,7 +54,8 @@ class DefaultController extends AbstractController
         $topics=$repository->findTopicWithCategorieId($id);
         return $this->render('default/forum.html.twig',[
             'topics'=>$topics,
-            'categorie_id'=>$id
+            'categorie_id'=>$id,
+
         ]);
     }
 

@@ -25,14 +25,13 @@ class UserFixtures extends Fixture
     }
     public function load(ObjectManager $manager)
     {
-        // $product = new Product();
-        // $manager->persist($product);
-        //
+
         $user1 = new User();
         $user1->setName('Paul')
           ->setRoles(['ROLE_ADMIN'])
           ->setEmail('mama90@outlook.fr')
-          ->setPassword($this->passwordEncoder->encodePassword($user1,'password'));
+          ->setPassword($this->passwordEncoder->encodePassword($user1,'password'))
+          ->setImageLink('images/pp1.png');
 
           $manager->persist($user1);
 
@@ -40,8 +39,8 @@ class UserFixtures extends Fixture
           $user2->setName('Robert')
             ->setRoles(['ROLE_USER'])
             ->setEmail('mama91@outlook.fr')
-            ->setPassword($this->passwordEncoder->encodePassword($user2,'password'));
-
+            ->setPassword($this->passwordEncoder->encodePassword($user2,'password'))
+            ->setImageLink('images/pp2.png');
             $manager->persist($user2);
 
             //
@@ -49,7 +48,8 @@ class UserFixtures extends Fixture
             $user3->setName('Anne')
               ->setRoles(['ROLE_USER'])
               ->setEmail('mama93@outlook.fr')
-              ->setPassword($this->passwordEncoder->encodePassword($user3,'password'));
+              ->setPassword($this->passwordEncoder->encodePassword($user3,'password'))
+              ->setImageLink('images/pp3.png');
 
               $manager->persist($user3);
 
@@ -58,8 +58,8 @@ class UserFixtures extends Fixture
               $user4->setName('Jule')
                 ->setRoles(['ROLE_USER'])
                 ->setEmail('mama94@outlook.fr')
-                ->setPassword($this->passwordEncoder->encodePassword($user4,'password'));
-
+                ->setPassword($this->passwordEncoder->encodePassword($user4,'password'))
+                ->setImageLink('images/pp4.png');
                 $manager->persist($user4);
 
 
@@ -68,8 +68,8 @@ class UserFixtures extends Fixture
                 $user5->setName('Louis')
                   ->setRoles(['ROLE_USER'])
                   ->setEmail('mama95@outlook.fr')
-                  ->setPassword($this->passwordEncoder->encodePassword($user5,'password'));
-
+                  ->setPassword($this->passwordEncoder->encodePassword($user5,'password'))
+                  ->setImageLink('images/pp5.png');
                   $manager->persist($user5);
 
         $manager->flush();
