@@ -5,19 +5,23 @@ namespace App\Controller;
 use App\Entity\Categorie;
 use App\Entity\Topic;
 use App\Entity\User;
+use App\Entity\Message;
 use App\Form\TopicType;
+use App\Form\MessageType;
 use App\Repository\CategorieRepository;
 use App\Repository\ArticleRepository;
 use App\Repository\TopicRepository;
 use Symfony\Component\Form\Extension\Core\Type\UserType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
 
 
 
@@ -75,15 +79,13 @@ class DefaultController extends AbstractController
 
         $topic->setCategorie($categorie);
         $form=$this->createForm(TopicType::class,$topic);
-
         $form->handleRequest($request);
-
         if ($form->isSubmitted()&& $form->isValid()){
             $topic->setUser( $this->getUser());
             $manager->persist($topic);
             $manager->flush();
 
-            return $this->redirectToRoute('forum_topic_show', [
+            return $this->redirectToRoute('forum_message_create', [
                 'id'=>$topic->getId()
             ]);
         }
@@ -92,18 +94,50 @@ class DefaultController extends AbstractController
 
         ]);
     }
+    /**
+    *@Route ("/forum_create_message/{id}", name="forum_message_create")
+    */
+    public function createMessageforum(
+       Request $request,
+       $id,
+       TopicRepository $repository,
+       EntityManagerInterface $manager
+       )
+       {
+         $topic = $repository->find($id);
+         $message= new Message();
+         $message->setTopic($topic);
+         $message->setUser($this->getUser());
+         $form= $this->createFormBuilder($message)
+         ->add('titre',TextType::class)
+         ->add('contenu',TextareaType::class)
+         ->getForm();
+
+           $form->handleRequest($request);
+
+         if ($form->isSubmitted() && $form->isValid()){
+
+             $manager->persist($message);
+             $manager->flush();
+             return $this->redirectToRoute('home');
+          }
+
+         return $this->render('default/create_message.html.twig',[
+           'form_message'=>$form->createView()
+         ]);
+       }
 
     /**
      * @Route ("/forum/{id}/show_topic", name="forum_topic_show")
      * @param Topic $topic
      */
+
     public function topic(Topic $topic)
     {
          return $this->render('default/show_topic.html.twig', [
              'topic'=>$topic
          ]);
     }
-
     /**
      * @Route("/register", name="register_index", methods={"GET", "POST"})
      */
@@ -123,10 +157,8 @@ class DefaultController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
           $user->setRoles(['ROLE_USER']);
-
           $encoded = $encoder->encodePassword($user, $form['password']->getData());
           $user->setPassword($encoded);
-
           $manager->persist($user);
           $manager->flush();
           return $this->redirectToRoute('home');

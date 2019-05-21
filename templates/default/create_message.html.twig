@@ -5,10 +5,12 @@
 
 
 {% block body %}
-  {{ form_start(message_topic) }}
+  {{ form_start(form_message) }}
+  {{ form_widget(form_message )}}
 
   <input Type="submit" name="submit" value="envoyer">
   <input Type="reset" name="reset" value="effacer">
-  {{ form_end(message_topic) }}
+
+  {{ form_end(form_message) }}
 
 {% endblock%}

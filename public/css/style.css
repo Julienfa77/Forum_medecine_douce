@@ -884,3 +884,11 @@ a {
 	margin-left: 71px;
 	margin-top: 35px;
 }
+
+.container {
+	text-align: center;
+}
+
+.container .form-control {
+	margin: 10px;
+}
