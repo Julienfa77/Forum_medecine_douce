@@ -5,10 +5,20 @@
 
 
 {% block body %}
-  {{ form_start(message_topic) }}
 
-  <input Type="submit" name="submit" value="envoyer">
-  <input Type="reset" name="reset" value="effacer">
-  {{ form_end(message_topic) }}
+  {#{ form_start(message_topic) }#}
 
+  <!--input Type="submit" name="submit" value="envoyer"-->
+  <!--input Type="reset" name="reset" value="effacer"-->
+  {#{ form_end(message_topic) }#}
+
+  <h2>{{ topic.titre }}</h2>
+  <ul>
+    {% for message in messages %}
+    <li>
+      <h3>{{message.titre}}</h3>
+      <p>{{message.contenu}}</p>
+    </li>
+    {% endfor %}
+  </ul>
 {% endblock%}

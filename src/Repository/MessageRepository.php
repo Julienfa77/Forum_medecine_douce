@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Message;
+use App\Entity\Topic;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -17,6 +18,15 @@ class MessageRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Message::class);
+    }
+
+    public function findByTopic(Topic $topic)
+    {
+      return ($qb=$this->createQueryBuilder('m'))
+        ->where($qb->expr()->eq('m.topic', ':topic'))
+        ->setParameter(':topic', $topic)
+        ->getQuery()
+        ->getResult();
     }
 
     // /**

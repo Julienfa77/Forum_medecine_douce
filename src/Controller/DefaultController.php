@@ -11,6 +11,8 @@ use App\Form\MessageType;
 use App\Repository\CategorieRepository;
 use App\Repository\ArticleRepository;
 use App\Repository\TopicRepository;
+use App\Repository\MessageRepository;
+use App\Repository\UserRepository;
 use Symfony\Component\Form\Extension\Core\Type\UserType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -132,10 +134,20 @@ class DefaultController extends AbstractController
      * @param Topic $topic
      */
 
-    public function topic(Topic $topic)
-    {
+    public function topic(
+      Topic $topic,
+      MessageRepository $repository
+      ) {
+        $messages = $repository->findByTopic($topic);
+        if (!$messages) {
+          return $this->redirectToRoute('forum_message_create',[
+            'id'=>$topic->getId()
+          ]);
+
+        }
          return $this->render('default/show_topic.html.twig', [
-             'topic'=>$topic
+             'topic'=>$topic,
+             'messages'=>$messages,
          ]);
     }
     /**
@@ -168,4 +180,20 @@ class DefaultController extends AbstractController
           'register_form' => $form->createView()
         ]);
     }
+
+/**
+  * @Route("/profile/{id}", name="profile")
+  */
+    public function profile(
+      $id,
+     UserRepository $repository
+      )
+      {
+      $user=$repository->findOneBy([
+        'id'=>$id
+      ]);
+        return $this->render('default/profile.html.twig',[
+          'user'=>$user
+        ]);
+      }
 }
