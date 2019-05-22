@@ -31,7 +31,7 @@
         {% block javascripts %}{% endblock %}
       <div class="footer">
 
-          <div class="button_cont1" align="center"><a class="example_a" href="{{ path('register_index') }}">S'enregistrer</a><br></div>
+
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
           <div class="button_cont3" align="center"><a class="example_c" href="{{ path('logout_route') }}">Se Deconnecter</a><br></div>
           {% else %}
