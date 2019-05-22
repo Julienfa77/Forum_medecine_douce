@@ -28,6 +28,14 @@ class TopicRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findLastTopic()
+    {
+      return $this->createQueryBuilder('t')
+        ->setMaxResults(4)
+        ->getQuery()
+        ->getResult();
+    }
+
     // /**
     //  * @return Topic[] Returns an array of Topic objects
     //  */
