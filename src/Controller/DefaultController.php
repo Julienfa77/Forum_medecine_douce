@@ -41,7 +41,7 @@ class DefaultController extends AbstractController
         $categories=$categoryRepository->findAll();
 
 
-        $topics=$topicRepository->findAll();
+        $topics=$topicRepository->findLastTopic();
 
 
         return $this->render('default/index.html.twig',[
@@ -184,7 +184,7 @@ class DefaultController extends AbstractController
     /**
     * @Route("/profile/{id}", name="profile")
     */
-    public function profile(
+    public function profile (
       $id,
      UserRepository $repository
       )

@@ -2,7 +2,6 @@
 
 {% block title %}{% endblock %}
 {% block header %}
-
 <div>
     <h2 id="h2-base">Fil d'actualité des articles</h2>
   <div class="image-header">
@@ -21,51 +20,31 @@
   <div class="image-header-article4">
       <a href="{{ path('page_naturophatie') }}"><img src="{{ asset('images/eau.jpg')}}">
       <h3 id="h3-image1">L'eau dans la naturophatie</h3></a>
-  </div>{% endblock %}
+  </div>
+</div>
+</div>
+{% endblock header %}
 
 
 
 {% block body %}
-
+<h2>Fil des Topics</h2>
 <div class="body-page">
-      <title>Fil des Topics</title>
-      <img class="imgpp1"src="{{ asset('images/pp1.png')}}">
-      <div class="trending-topic">
-         <a href="" >
-        <h5>Les six saveurs</h5>
-        <p>Marine Shein
-          <span>5 commentaires</span>
-        </p>
-        </button>
-      </a>
-      </div>
-
-     <img class="imgpp2" src="{{ asset('images/pp2.png')}}">
-      <div class="trending-topic2">
-           <a href="">
-        <h5>Cuisiner sans sucre ! Quelles sont vos recettes ?</h5>
-        <p>Sophie Than
-          <span>25 commentaires</span>
-        </p>
-      </a>
-      </div>
-
-       <img class="imgpp3"src="{{ asset('images/pp3.png')}}">
-      <div class="trending-topic3">
-        <h5>Baume du Tigre</h5>
-        <p>Amahada Vanh Sellier
-          <span>213 commentaires</span>
-        </p>
-      </div>
-
-      <img class="imgpp4"src="{{ asset('images/pp4.png')}}">
-      <div class="trending-topic4">
-        <h5>Le soleil me fait des migraines !</h5>
-        <p>Sakura Chan
-          <span>1 commentaire</span>
-        </p>
-      </div>
+      {% for topic in topics %}
+          {% if topic.user.imageLink is null %}
+          <img class="imgpp{{ loop.index }}" src="{{ asset('images/pp' ~ random(5) ~ '.png')}}">
+          {% else %}
+            <img class="imgpp{{ loop.index }}" src="{{ asset(topic.user.imageLink)}}">
+        {% endif %}
+        <div class="trending-topic{{ loop.index }}">
+          <h5><a href="{{ path('forum_topic_show', {'id': topic.id }) }}">{{ topic.titre }}</a></h5>
+          <p>{{ topic.user.name }}
+            <span>1 commentaire</span>
+          </p>
+        </div>
+      {% endfor %}
 </div>
+
   <div class="fondcategorie"> <!--  background image -->
  <div class="categorie"> <!-- grille -->
 {% set pos = 0 %}
@@ -74,6 +53,7 @@
 {% set pos = 1 %}
 <h6 class="myButton5">CATEGORIES</h6>
 {% endif %}
+
 
   <a href="{{ path('forum_show', {'id': categorie.id}) }}" class="myButton{{ loop.index + pos }}">
     <h6>{{ categorie.name }}</h6>
@@ -87,4 +67,4 @@
 
 
 
-{% endblock %}
+{% endblock body %}

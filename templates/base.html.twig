@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/style.css')}}">
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/style.css')}}">
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
         <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
@@ -20,20 +21,13 @@
     <body>
 
       <div class="header">
-
       <h1><a href="{{ path('home') }}"><img src="{{ asset('images/logo1.png')}}"></a></h1>
-    
+      {% block header %}{% endblock header %}
+      </div>
 
-      {% block header %}{% endblock %}
-    </div>
+      {% block body %}{% endblock body %}
 
-
-
-
-        {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
-
-
       <div class="footer">
 
           <div class="button_cont1" align="center"><a class="example_a" href="{{ path('register_index') }}">S'enregistrer</a><br></div>
@@ -46,13 +40,5 @@
 
       {% block footer %}{% endblock %}
       </div>
-
-
-
     </body>
-
-
-
-
-
 </html>
