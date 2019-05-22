@@ -885,10 +885,15 @@ a {
 	margin-top: 35px;
 }
 
-.container {
+/*.container {
 	text-align: center;
-}
+}*/
 
 .container .form-control {
 	margin: 10px;
+}
+
+.container {
+	background-color: #B2FF70;
+
 }

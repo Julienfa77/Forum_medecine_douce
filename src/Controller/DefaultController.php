@@ -181,9 +181,9 @@ class DefaultController extends AbstractController
         ]);
     }
 
-/**
-  * @Route("/profile/{id}", name="profile")
-  */
+    /**
+    * @Route("/profile/{id}", name="profile")
+    */
     public function profile(
       $id,
      UserRepository $repository
