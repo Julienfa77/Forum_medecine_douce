@@ -24,13 +24,13 @@
   </div>
 </div>
 </div>
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<!-- k rel="stylesheet" href="{{ asset('css/index.css') }}"> -->
 {% endblock header %}
 
 
 
 {% block body %}
-<h2>Fil des Topics</h2>
+<h2 class="fildestopic">Fil des Topics</h2>
 <div class="body-page">
       {% for topic in topics %}
           {% if topic.user.imageLink is null %}
@@ -65,7 +65,6 @@
 
 </div>
 </div>
-
 
 
 

@@ -1,12 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-{{ form_start(form_topic) }}
-{{ form_widget(form_topic) }}
-    <input Type="submit" name="submit" value="enregistrer">
-    <input Type="reset" name="reset" value="effacer">
-{{ form_end(form_topic) }}
+{% block stylesheets %}
+{{ parent() }}
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/create_topic.css') }}">
+{% endblock %}
 
-<a href="#" onclick="history.back();">Retour au topic</a>
+
+
+{% block body %}
+
+<div id="form">
+  <h1>Login</h1>
+  {{ form_start(form_topic) }}
+
+
+  {{ form_widget(form_topic) }}
+
+
+  <input type="submit" name="submit"  value="Valide" class="submit-button"/>
+  {{ form_end(form_topic) }}
+
+  <a href="#" onclick="history.back();">Retour au topic</a> -->
+
 
 {% endblock %}
