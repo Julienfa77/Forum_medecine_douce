@@ -11,6 +11,10 @@
         <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/create_topic.css') }}">
 
 
       {% endblock %}
@@ -32,12 +36,12 @@
       <div class="footer">
 
 
-          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-          <div class="button_cont3" align="center"><a class="example_c" href="{{ path('logout_route') }}">Se Deconnecter</a><br></div>
-          {% else %}
-          <div class="button_cont2" align="center"><a class="example_b" href="{{ path('app_login') }}">Se connecter</a><br></div>
-          {% endif %}
-          <hr>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <div class="button_cont3" align="center"><a class="example_c" href="{{ path('logout_route') }}">Se Deconnecter</a><br></div>
+        {% else %}
+        <div class="button_cont2" align="center"><a class="example_b" href="{{ path('app_login') }}">Se connecter</a><br></div>
+        {% endif %}
+        <hr>
 
       {% block footer %}{% endblock %}
       </div>
