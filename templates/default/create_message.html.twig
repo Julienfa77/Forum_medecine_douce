@@ -1,16 +1,26 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+{{ parent() }}
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/create_topic.css') }}">
+{% endblock %}
  {% block title %}  {% endblock %}
 
 
-
 {% block body %}
+<div id="form">
+  <h1>Login</h1>
   {{ form_start(form_message) }}
+
   {{ form_widget(form_message )}}
 
-  <input Type="submit" name="submit" value="envoyer">
-  <input Type="reset" name="reset" value="effacer">
 
+  <input type="submit" name="submit"  value="Valide" class="submit-button"/>
   {{ form_end(form_message) }}
+
+
+    <a href="#" onclick="history.back();">Retour au topic</a> -->
+  </div>
 
 {% endblock%}

@@ -75,13 +75,12 @@ body {
 }
 
 .footer {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: auto;
   text-align:center;
   width: 100%;
 }
@@ -96,6 +95,12 @@ body {
 
 }
 
+.fildestopic {
+	margin-top: 133px;
+	margin-left:79px;
+	font-family: 'Sanchez', serif;
+	text-transform: uppercase;
+}
 
 .image-header-article1 {
 	text-align: center;
@@ -149,26 +154,25 @@ body {
 
 #h3-image1 {
 	font-family: 'Sanchez', serif;
-	font-size: 20px;
+	font-size: 23px;
 	text-decoration: none;
 	color: black;
 
 }
 #h3-image2 {
 	font-family: 'Sanchez', serif;
-	font-size: 20px;
+	font-size: 23px;
 	text-decoration: none;
 	color: black;
 
 }
 #h3-image3 {
 	font-family: 'Sanchez', serif;
-	font-size: 20px;
+	font-size: 23px;
 	text-decoration: none;
 	color: black;
 
 }
-
 
 
 .button_cont1{
@@ -254,11 +258,11 @@ h1 {
 }
 
 #h2-base {
-	background-color: lightgreen;
-  	margin-top: 58px;
-	margin-left: 20px;
-	font-family: 'Work Sans', sans-serif;
+  margin-top: 85px;
+	margin-left: 14px;
+	font-family: 'Sanchez', serif;
 	font-size: 30px;
+	margin-bottom: 6px;
 }
 
 }
@@ -288,13 +292,13 @@ h1 {
 	transition: all 0.4s ease 0s;
 }
 
-/* ------------BODY PAGE TOPICS------------ */
+/* -------------------BODY PAGE TOPICS---------------------- */
 
 .body-page {
 	display: grid;
 	grid-template-columns: 20px 1fr;
 	grid-template-rows: 100px 100px 100px 100px;
-	margin-top: 150px;
+	margin-top: 33px;
 	margin-left: 80px;
 
 }
@@ -922,4 +926,51 @@ a {
 
 .background-thym {
 	background-image: url(../images/plante.jpg);
+}
+
+
+
+
+/* #form input[type="submit"], #form input[type="reset"]{
+  width:250px;
+  height:2px;
+	font-family: 'Baloo Bhai', cursive;
+  width:98%;
+} */
+
+
+
+#form{
+
+  border:5px solid white;
+  border-radius:5%;
+  background:transparent;
+  width:300px;
+  text-align:center;
+  margin:100px auto;
+}
+#form h1{
+  color:white;
+}
+
+#form input{
+  color:red;
+  padding:1em;
+  margin:5px;
+  background:white;
+  border:2px solid white;
+  border-radius:3%;
+}
+#form .text{
+  width:250px;
+  height:2px;
+}
+#form .submit-button{
+  background:transparent;
+  margin:15px;
+  color:white;
+  width:40%;
+  padding:5px;
+  border:3px solid;
+  border-radius:7%;
 }
