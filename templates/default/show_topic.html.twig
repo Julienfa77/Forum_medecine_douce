@@ -18,13 +18,15 @@
   {#{ form_end(message_topic) }#}
 
   <h2>{{ topic.titre }}</h2>
+
   <ul>
     {% for message in messages %}
     <li>
       <h3>{{message.titre}}</h3>
       <p>{{message.contenu}}</p>
     </li>
-      <a href="{{ path('home') }}">back to list</a>
+
     {% endfor %}
+    <a href="{{ path('forum_message_create', {'id': topic.id}) }}"> créer un message</a> - <a href="{{ path('home') }}">back to list</a>
   </ul>
 {% endblock%}
