@@ -32,7 +32,8 @@ class Message
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Topic")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Topic", cascade={"remove"})
+     * @ORM\JoinColumn(name="topic_id", referencedColumnName="id", onDelete="SET NULL")
      */
     private $topic;
 
