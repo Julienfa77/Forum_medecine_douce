@@ -3,8 +3,7 @@
 {{ parent() }}
 <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('css/article.css') }}">
-
-
+<link href="https://fonts.googleapis.com/css?family=Mandali&display=swap" rel="stylesheet">
 
 {% endblock %}
 
@@ -12,7 +11,7 @@
 
 {% block body %}
 
-      <th>ImageLink</th>
+      <div class="img-link">ImageLink</div>
             <!-- <td><img src="{{ asset(article.imageLink) }}"></td> -->
             <!-- <th>DateCreation</th>
             <td>{{ article.dateCreation ? article.dateCreation|date('Y-m-d H:i:s') : '' }}</td> -->
@@ -21,10 +20,10 @@
 
   <article>
 
-                <h3>{{ 'Id' | trans }}</h3
-                <td>{{ article.id }}</td>
-                <th>Titre</th>
-                <td>{{ article.titre }}</td>
+                
+
+
+                <h3>{{ article.titre }}</h3>
 
   <p>{{ article.contenu }}</p>
   </article>
