@@ -28,7 +28,7 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
         $article1->setDateCreation(new datetime('now'));
         $article1->setTitre('La réussite de l\'ayurveda');
         $article1->setContenu('contenu de la réussite bla blab lbalb lba');
-        $article1->setImageLink('images/ayurveda.jpg');
+        $article1->setImageLink('images/ayurveda.png');
         $article1->setAuteur($this->getReference(UserFixtures::USER_USER1));
         $manager->persist($article1);
 

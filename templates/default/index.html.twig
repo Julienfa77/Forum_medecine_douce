@@ -10,7 +10,18 @@
 {% block header %}
 <div>
     <h2 id="h2-base">Fil d'actualité des articles</h2>
-  <div class="image-header">
+    <div class="image-header">
+    {% for article in articles %}
+      <div class="image-header-article{{ loop.index }}">
+        <a href="{{ path('article_show', {'id': article.id}) }}">
+          <img src="{{ asset(article.imageLink) }}">
+          <h3>{{ article.titre }}</h3>
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+
+  <!--div class="image-header">
     <div class="image-header-article1">
         <a href="{{ path('page_ayurveda') }}"><img src="{{ asset('images/herb.jpg')}}">
         <h3 id="h3-image1">La réussite de l'ayurveda</h3></a>
@@ -27,7 +38,7 @@
       <a href="{{ path('page_naturophatie') }}"><img src="{{ asset('images/eau.jpg')}}">
       <h3 id="h3-image1">L'eau dans la naturophatie</h3></a>
   </div>
-</div>
+</div-->
 </div>
 <!-- k rel="stylesheet" href="{{ asset('css/index.css') }}"> -->
 {% endblock header %}
