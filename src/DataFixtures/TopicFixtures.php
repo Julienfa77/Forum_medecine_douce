@@ -20,31 +20,31 @@ class TopicFixtures extends Fixture implements DependentFixtureInterface
     {
 
        $topic1 = new Topic();
-       $topic1->setTitre('topic1PLANTES')
+       $topic1->setTitre('PLANTES')
         ->setCategorie($this->getReference(array_keys(CategorieFixtures::CATEGORIES_REF)[0]))
         ->setUser($this->getReference(UserFixtures::USER_USER2));
        $manager->persist($topic1);
 
         $topic2 = new Topic();
-        $topic2->setTitre('topic2PLANES')
+        $topic2->setTitre('PLANES')
           ->setCategorie($this->getReference(array_keys(CategorieFixtures::CATEGORIES_REF)[0]))
           ->setUser($this->getReference(UserFixtures::USER_USER5));
         $manager->persist($topic2);
 
         $topic3 = new Topic();
-        $topic3->setTitre('topic3HERBES')
+        $topic3->setTitre('HERBES')
         ->setCategorie($this->getReference(array_keys(CategorieFixtures::CATEGORIES_REF)[3]))
         ->setUser($this->getReference(UserFixtures::USER_USER5));
         $manager->persist($topic3);
 
         $topic4 = new Topic();
-        $topic4->setTitre('topic4MUSIQUE')
+        $topic4->setTitre('MUSIQUE')
         ->setCategorie($this->getReference(array_keys(CategorieFixtures::CATEGORIES_REF)[7]))
         ->setUser($this->getReference(UserFixtures::USER_USER3));
         $manager->persist($topic4);
 
         $topic5 = new Topic();
-        $topic5->setTitre('topic5CUISINE')
+        $topic5->setTitre('CUISINE')
         ->setCategorie($this->getReference(array_keys(CategorieFixtures::CATEGORIES_REF)[1]))
         ->setUser($this->getReference(UserFixtures::USER_USER2));
         $manager->persist($topic5);

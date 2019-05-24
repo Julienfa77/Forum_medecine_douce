@@ -1,4 +1,8 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/create_topic.css') }}">
 
 {% block title %}Topic{% endblock %}
 

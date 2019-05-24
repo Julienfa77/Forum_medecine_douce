@@ -23,10 +23,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
+/* body {
 	line-height: 1;
 
-}
+} */
 ol, ul {
 	list-style: none;
 }
@@ -50,12 +50,11 @@ html {
 
 
 body {
-	position: relative;
-  min-height: 100%;
-	/* background-image: url(../images/fondgreen.jpg); */
+	background: url(https://66.media.tumblr.com/b07d795af6812e68d2b294daf3ef5527/tumblr_prwy50NzRa1yp4zl5o1_1280.jpg);
+	background-attachment: fixed;
+	background-position: center 0;
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding-bottom: 5em;
 }
 
 * {
@@ -108,6 +107,13 @@ body {
 	grid-column: 1;
 
 }
+.image-header-article {
+	text-align: center;
+	grid-column: 1;
+
+}
+
+
 .image-header-article2 {
 	text-align: center;
 	grid-column: 2;
@@ -173,6 +179,11 @@ body {
 	text-decoration: none;
 	color: black;
 
+}
+
+.image-header h3 {
+	color: white;
+	font-family: 'Sanchez', serif;
 }
 
 
@@ -254,19 +265,19 @@ ul{
 .ban {
   grid-column: 1;
   text-align: center;
-  color: darkgreen;
   font-size: 1.8571em; /* equiv 26px */
   line-height: 1.6154em;
 	font-family: 'Playball', cursive;
-	background-color: #81D338;
 }
 
+
 #h2-base {
-  margin-top: 85px;
+  margin-top: 200px;
 	margin-left: 14px;
 	font-family: 'Sanchez', serif;
 	font-size: 30px;
 	margin-bottom: 6px;
+	color: white;
 }
 
 .image-header-article1 img:hover {
