@@ -55,6 +55,8 @@ body {
 	background-position: center 0;
 	background-repeat: no-repeat;
 	background-size: cover;
+	font-family: 'Baloo Bhai', cursive;
+
 }
 
 * {
@@ -96,10 +98,20 @@ body {
 }
 
 .fildestopic {
-	margin-top: 133px;
+	margin-top: 190px;
 	margin-left:79px;
-	font-family: 'Sanchez', serif;
+
+	font-family: 'Baloo Bhai', cursive;
 	text-transform: uppercase;
+	color: white;
+}
+
+.body-page h5 {
+	color: white;
+}
+
+.fildestopic h2 {
+	color: white;
 }
 
 .image-header-article1 {
@@ -273,10 +285,10 @@ ul{
 
 #h2-base {
   margin-top: 200px;
-	margin-left: 14px;
-	font-family: 'Sanchez', serif;
+	margin-left: 54px;
+	font-family: 'Baloo Bhai', cursive;
 	font-size: 30px;
-	margin-bottom: 6px;
+	margin-bottom: 16px;
 	color: white;
 }
 
@@ -325,7 +337,7 @@ ul{
 	text-transform: uppercase;
 	box-shadow: 0px 1px #e3e4e5;
 	margin-left: 40px;
-	color:orange;
+	color: orange;
 	margin-top: 15px;
 }
 .trending-topic span {
@@ -353,9 +365,25 @@ ul{
 	text-transform: uppercase;
 	box-shadow: 0px 1px #e3e4e5;
 	margin-left: 40px;
-	color:green;
+	color: orange;
 	margin-top: 15px;
 }
+
+.trending-topic1 a{
+	color: white;
+}
+.trending-topic2 a{
+	color: white;
+}
+.trending-topic3 a{
+	color: white;
+}
+.trending-topic4 a{
+	color: white;
+}
+
+
+
 .trending-topic2 span {
 	color: grey;
 }
@@ -380,7 +408,7 @@ ul{
 	text-transform: uppercase;
 	box-shadow: 0px 1px #e3e4e5;
 	margin-left: 40px;
-	color:blue;
+	color: orange;
 	margin-top: 15px;
 }
 .imgpp3 {
@@ -406,7 +434,7 @@ ul{
 	text-transform: uppercase;
 	box-shadow: 0px 1px #e3e4e5;
 	margin-left: 40px;
-	color: red;
+	color: orange;
 	margin-top: 15px;
 }
 .trending-topic4 span {
@@ -442,7 +470,7 @@ a {
 
 	width: 100%;
 	height: 100%;
-	background-image: url(../images/lotus.jpg);
+
 	background-repeat: no-repeat;
 	background-position: center;
 
