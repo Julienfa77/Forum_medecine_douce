@@ -1,25 +1,27 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/article.css') }}">
+{% endblock %}
 
 {% block title %}Article{% endblock %}
 
 {% block body %}
     <h1>Article</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
+    <div class="bloc-article">
+
+
+                <h3>Id</h3
                 <td>{{ article.id }}</td>
-            </tr>
-            <tr>
                 <th>Titre</th>
                 <td>{{ article.titre }}</td>
-            </tr>
-            <tr>
+
                 <th>ImageLink</th>
-                <td><img src="{{ asset(article.imageLink) }}""></td>
+                <td><img src="{{ asset(article.imageLink) }}"></td>
             </tr>
-            <tr>
+          <tr>
                 <th>Contenu</th>
                 <td>{{ article.contenu }}</td>
             </tr>
@@ -28,7 +30,7 @@
                 <td>{{ article.dateCreation ? article.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
-    </table>
+    </div>
 
     <a href="{{ path('article_index') }}">back to list</a>
 
