@@ -250,7 +250,8 @@ ul{
 	grid-row: ;
   border-top-color: #222222;
 }
-h1 {
+
+.ban {
   grid-column: 1;
   text-align: center;
   color: darkgreen;
