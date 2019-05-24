@@ -13,7 +13,7 @@
     <div class="bloc-article">
 
 
-                <h3>Id</h3
+                <h3>{{ 'Id' | trans }}</h3
                 <td>{{ article.id }}</td>
                 <th>Titre</th>
                 <td>{{ article.titre }}</td>
@@ -32,9 +32,9 @@
         </tbody>
     </div>
 
-    <a href="{{ path('article_index') }}">back to list</a>
+    <a href="{{ path('article_index') }}">{{ 'back to list' | trans }}</a>
 
-    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+    <a href="{{ path('article_edit', {'id': article.id}) }}">{{ 'edit' | trans }}</a>
 
     {{ include('article/_delete_form.html.twig') }}
 {% endblock %}
