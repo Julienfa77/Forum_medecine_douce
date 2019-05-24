@@ -3,38 +3,47 @@
 {{ parent() }}
 <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('css/article.css') }}">
+
+
+
 {% endblock %}
 
-{% block title %}Article{% endblock %}
+{% block title %} Article {% endblock %}
 
 {% block body %}
-    <h1>Article</h1>
 
-    <div class="bloc-article">
+      <th>ImageLink</th>
+            <!-- <td><img src="{{ asset(article.imageLink) }}"></td> -->
+            <!-- <th>DateCreation</th>
+            <td>{{ article.dateCreation ? article.dateCreation|date('Y-m-d H:i:s') : '' }}</td> -->
+  <section class="container">
+  <h1>{{ article.titre }}</h1>
 
+  <article>
 
-                <h3>{{ 'Id' | trans }}</h3
+<<<<<<< HEAD
+                <h3>Id</h3
                 <td>{{ article.id }}</td>
                 <th>Titre</th>
                 <td>{{ article.titre }}</td>
+=======
+  <p>{{ article.contenu }}</p>
+  </article>
+  </section><!-- .container -->
+>>>>>>> cbde7fdabe2125cb136495cadd66d6f2367d1ac9
 
-                <th>ImageLink</th>
-                <td><img src="{{ asset(article.imageLink) }}"></td>
-            </tr>
-          <tr>
-                <th>Contenu</th>
-                <td>{{ article.contenu }}</td>
-            </tr>
-            <tr>
-                <th>DateCreation</th>
-                <td>{{ article.dateCreation ? article.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </div>
+  <a href="{{ path('article_index') }}">back to list</a>
+  <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
 
+<<<<<<< HEAD
     <a href="{{ path('article_index') }}">{{ 'back to list' | trans }}</a>
 
     <a href="{{ path('article_edit', {'id': article.id}) }}">{{ 'edit' | trans }}</a>
+=======
 
-    {{ include('article/_delete_form.html.twig') }}
+{% endblock %}
+>>>>>>> cbde7fdabe2125cb136495cadd66d6f2367d1ac9
+
+{% block javascripts %}
+<script type="text/javascript" src="{{ asset('javascript/style.js') }}"></script>
 {% endblock %}

@@ -27,7 +27,17 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
         $article1 = new Article();
         $article1->setDateCreation(new datetime('now'));
         $article1->setTitre('La réussite de l\'ayurveda');
-        $article1->setContenu('contenu de la réussite bla blab lbalb lba');
+        $article1->setContenu('En sanskrit, " Ayur " signifie la vie, et " Veda " la science ou la connaissance. Créée par les Rishis, les Sages de l’Inde classique, l’"Ayurveda "peut donc se traduire littéralement par " Connaissance de la vie ou de la longévité ".
+              L’intelligence de la vie : Prana
+              Dans ce contexte, la vie est étudiée dans sa dynamique perpétuelle, sa capacité à transformer et à créer, son intelligence. Cette intelligence de la vie est Prana, ou l’énergie fondamentale, source de toute manifestation de la matière dans la création. Prana est aussi la force à l’œuvre dans le processus de guérison.
+              LA SCIENCE DES RISHIS
+              L’Ayurveda, science millénaire développée dans l’Inde classique, a été élaborée par des Rishis ou Sages, à travers une fabuleuse Odyssée d’expériences menées pour mieux comprendre le fonctionnement de la nature, et à travers elle, de tous les êtres vivants.
+              L’HARMONIE UNIVERSELLE
+              Si les principes de base de l’Ayurveda n’ont jamais changé à travers les siècles, malgré tous les efforts pour en faire taire sa puissance, c’est parce qu’ils proviennent des lois universelles de la Nature, qui sont éternellement vraies. Il s’agit donc de la connaissance globale des moyens de vivre notre vie quotidienne en harmonie avec la nature et les principes cosmiques.
+              L’AYURVEDA, MÉDECINE ET ART DE VIVRE
+              La particularité de l’Ayurveda est celle d’une médecine holistique. Mais bien plus qu’un système de santé, c’est un art de vivre complet qui prend en compte tous les aspects de l’être humain, de ceux, plus abstraits et transcendantaux, de l’existence, jusqu’à ceux, plus matériels et concrets, du corps physique. C’est un moyen de comprendre sa vraie nature en profondeur
+              DES TECHNIQUES VARIÉES
+              L’Ayurveda propose des outils pratiques et concrets, ancrés dans le quotidien, tels que le régime alimentaire, la détoxification et différentes techniques de purification, le yoga et les exercices respiratoires, la méditation, l’utilisation de remèdes à base de plantes ou de minéraux, le massage ainsi que d’autres méthodes de guérison holistiques.');
         $article1->setImageLink('images/ayurveda.png');
         $article1->setAuteur($this->getReference(UserFixtures::USER_USER1));
         $manager->persist($article1);
