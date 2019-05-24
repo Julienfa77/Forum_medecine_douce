@@ -36,13 +36,9 @@ class DefaultController extends AbstractController
                           CategorieRepository $categoryRepository,
                           TopicRepository $topicRepository )
     {
-       $articles=$articleRepository->findAll();
-
+       $articles=$articleRepository->findLastArticle();
         $categories=$categoryRepository->findAll();
-
-
         $topics=$topicRepository->findLastTopic();
-
 
         return $this->render('default/index.html.twig',[
             'articles'=>$articles,
