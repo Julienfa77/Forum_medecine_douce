@@ -21,28 +21,27 @@
 
   <article>
 
-<<<<<<< HEAD
-                <h3>Id</h3
+                <h3>{{ 'Id' | trans }}</h3
                 <td>{{ article.id }}</td>
                 <th>Titre</th>
                 <td>{{ article.titre }}</td>
-=======
+
   <p>{{ article.contenu }}</p>
   </article>
   </section><!-- .container -->
->>>>>>> cbde7fdabe2125cb136495cadd66d6f2367d1ac9
+
 
   <a href="{{ path('article_index') }}">back to list</a>
   <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
 
-<<<<<<< HEAD
+
     <a href="{{ path('article_index') }}">{{ 'back to list' | trans }}</a>
 
     <a href="{{ path('article_edit', {'id': article.id}) }}">{{ 'edit' | trans }}</a>
-=======
+
 
 {% endblock %}
->>>>>>> cbde7fdabe2125cb136495cadd66d6f2367d1ac9
+
 
 {% block javascripts %}
 <script type="text/javascript" src="{{ asset('javascript/style.js') }}"></script>
