@@ -1,4 +1,9 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/admin_edit.css') }}">
+{% endblock %}
 
 {% block title %}Administration du site{% endblock %}
 
@@ -6,7 +11,6 @@
     <h1>Administration du site</h1>
 <ul>
 
-   <li> <a href="{{ path('topic_index') }}">Gestion des topics</a></li><hr>
     <li><a href="{{ path('categorie_index') }}">Gestion des catégories</a></li><hr>
     <li><a href="{{ path('topic_index') }}">Gestion des topics</a></li><hr>
     <li><a href="{{ path('user_index') }}">Gestion des users</a></li><hr>
