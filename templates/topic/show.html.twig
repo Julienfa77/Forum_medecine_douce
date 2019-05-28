@@ -2,11 +2,15 @@
 {% block stylesheets %}
 {{ parent() }}
 <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('css/create_topic.css') }}">
+<link rel="stylesheet" href="{{ asset('css/article.css') }}">
+{% endblock %}
 
 {% block title %}Topic{% endblock %}
 
 {% block body %}
+
+
+
     <h1>Topic</h1>
 
     <table class="table">
@@ -27,4 +31,5 @@
     <a href="{{ path('topic_edit', {'id': topic.id}) }}">{{ 'edit' | trans }}</a>
 
     {{ include('topic/_delete_form.html.twig') }}
+
 {% endblock %}

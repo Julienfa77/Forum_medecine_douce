@@ -11,36 +11,32 @@
 
 {% block body %}
 
-      <div class="img-link">ImageLink</div>
-            <!-- <td><img src="{{ asset(article.imageLink) }}"></td> -->
+    <!-- <div class="img-link">ImageLink</div>
+            <img src="{{ asset(article.imageLink) }}"> -->
             <!-- <th>DateCreation</th>
             <td>{{ article.dateCreation ? article.dateCreation|date('Y-m-d H:i:s') : '' }}</td> -->
-  <section class="container">
-  <h1>{{ article.titre }}</h1>
+  <div class="container">
 
   <article>
-
-                
 
 
                 <h3>{{ article.titre }}</h3>
 
+                        <img src="{{ asset(article.imageLink) }}">
+
   <p>{{ article.contenu }}</p>
-  </article>
-  </section><!-- .container -->
 
-
-  <a href="{{ path('article_index') }}">back to list</a>
-  <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
-
-
+  <div class="button-edit">
+    <a href="{{ path('article_index') }}">back to list</a>
+    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
     <a href="{{ path('article_index') }}">{{ 'back to list' | trans }}</a>
 
-    <a href="{{ path('article_edit', {'id': article.id}) }}">{{ 'edit' | trans }}</a>
+  </div>
+  </article>
+</div><!-- .container -->
 
 
 {% endblock %}
-
 
 {% block javascripts %}
 <script type="text/javascript" src="{{ asset('javascript/style.js') }}"></script>

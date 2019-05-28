@@ -5,6 +5,7 @@
 {% block body %}
     <h1>{{ 'New topic' | trans }}</h1>
 
+
     {{ include('topic/_form.html.twig') }}
 
     <a href="{{ path('topic_index') }}">{{ 'back to list' | trans }}</a>

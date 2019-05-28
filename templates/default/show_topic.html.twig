@@ -2,7 +2,7 @@
 {% block stylesheets %}
 {{ parent() }}
 <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('css/create_topic2(only).css') }}">
+<link rel="stylesheet" href="{{ asset('css/article2.css') }}">
 {% endblock %}
 
  {% block title %}  {% endblock %}
@@ -17,7 +17,9 @@
   <!--input Type="reset" name="reset" value="effacer"-->
   {#{ form_end(message_topic) }#}
 
-  <h2>{{ topic.titre }}</h2>
+  <div class="container">
+
+  
 
   <ul>
     {% for message in messages %}
@@ -29,4 +31,6 @@
     {% endfor %}
     <a href="{{ path('forum_message_create', {'id': topic.id}) }}"> créer un message</a> - <a href="{{ path('home') }}">back to list</a>
   </ul>
+
+</div>
 {% endblock%}

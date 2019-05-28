@@ -1,4 +1,17 @@
+
+
+
+
+
 {{ form_start(form) }}
     {{ form_widget(form) }}
+
+      <div id="userActions">
+      	<p>Drag &amp; Drop Image</p>
+      	<input type="file" id="fileUpload" />
+      </div>
+      <img id="imgPrime" src="" alt="uploaded image placeholder" />
+
     <button class="btn">{{ button_label|default('Save') }}</button>
+    
 {{ form_end(form) }}

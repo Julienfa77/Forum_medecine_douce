@@ -17,6 +17,7 @@ class TopicType extends AbstractType
     {
         $builder
             ->add('titre',TextType::class)
+            
             ->add('categorie',EntityType::class, [
                 'class'=>Categorie::class,
                 'choice_label'=>'name'

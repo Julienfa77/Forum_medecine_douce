@@ -1,10 +1,18 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/article.css') }}">
+{% endblock %}
+
 
 {% block title %}{{ 'Message Index' | trans }}{% endblock %}
 
 {% block body %}
     <h1>{{ 'Message Index' | trans }}</h1>
+    <div class="container">
 
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -36,4 +44,7 @@
     <a href="{{ path('message_new') }}">{{ 'Create new message' | trans }}</a>
     <hr>
     <a href="{{ path('home') }}">Retour à l'acceuil</a>
+  </div>
+
+    </div>
 {% endblock %}

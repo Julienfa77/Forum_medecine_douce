@@ -76,10 +76,10 @@ body {
 }
 
 .container {
-  max-width: 30rem;
+  max-width: 53rem;
   margin: 0 auto;
   padding: 1rem;
-  margin-top: 124px;
+  margin-top: 308px;
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -102,7 +102,7 @@ body {
   border-radius:7%;
 }
 
-.button-edit a{
+a{
   color: rgba(129, 207, 224, 1);
   font-family: 'Baloo Bhai', cursive;
   font-size: 16px;
@@ -114,6 +114,8 @@ h3 {
   text-transform: capitalize;
   margin-bottom: 13px;
   font-size: 31px;
+  margin-top: 47px;
+
 }
 
 .container img {

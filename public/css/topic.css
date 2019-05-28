@@ -1,0 +1,40 @@
+.table {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 1rem;
+  margin-top: 124px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.table h1, h2, p {
+  font-family: 'Mandali', sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+  line-height: 150%;
+}
+
+
+
+#form .submit-button{
+  background:transparent;
+  margin:15px;
+  color:white;
+  width:40%;
+  padding:5px;
+  border:3px solid;
+  border-radius:7%;
+}
+
+.button-edit a{
+  color: rgba(129, 207, 224, 1);
+  font-family: 'Baloo Bhai', cursive;
+  font-size: 16px;
+  margin-right: 77px;
+}
+
+h3 {
+  color: rgba(129, 207, 224, 1);
+  text-transform: capitalize;
+  margin-bottom: 13px;
+  font-size: 31px;
+}

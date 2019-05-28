@@ -8,14 +8,14 @@
 {% block title %}Article index{% endblock %}
 
 {% block body %}
+<div class="container">
     <h1>Article index</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                
                 <th>Titre</th>
-                <th>ImageLink</th>
                 <th>Contenu</th>
                 <th>DateCreation</th>
                 <th>actions</th>
@@ -24,9 +24,9 @@
         <tbody>
         {% for article in articles %}
             <tr>
-                <td>{{ article.id }}</td>
+
                 <td>{{ article.titre }}</td>
-                <td>{{ article.imageLink }}</td>
+
                 <td>{{ article.contenu }}</td>
                 <td>{{ article.dateCreation ? article.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
@@ -43,4 +43,5 @@
     </table>
 
     <a href="{{ path('article_new') }}">{{ 'Create new' | trans }}</a>
+  </DIV>
 {% endblock %}
